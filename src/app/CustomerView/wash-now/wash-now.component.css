@@ -1,0 +1,82 @@
+.box
+{
+    border-radius: 1em;
+    align-items: center;
+   
+}
+.c2
+{
+    background-color: blue;
+}
+mat-form-field
+{
+    width: 350px;
+    margin: 10px;
+}
+mat-radio-group
+{
+    width: 750px;
+    margin: 20px;
+
+}
+.image
+    {
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+        height: 687px;
+        
+    }
+    .navbar-brand{
+        font-size: 2.5rem;
+        color:rgb(2, 12, 104);
+              font-family:'Kaushan Script', cursive;
+        }
+          
+        .header-2.active{
+            position: fixed;
+            top:0; left: 0; right:0;
+            z-index: 10000;
+          }
+      
+      
+      /* ..... */
+          .navbar-nav{
+            text-align: right;
+            padding-top: 2.5rem;
+          padding-bottom: 1.5rem;
+          font-size: 21px;
+          font-family: 'Roboto Slab', serif;
+          /* background-color:#FAFDD6; */
+          }
+          .navbar .navbar-nav .nav-link {
+              color: black;
+              font-size: 0.9em;
+              padding-left: 3em;
+          }
+          .navbar .navbar-nav .nav-link:hover{
+              color: rgb(14, 190, 248);
+          }
+      /* ...... */
+      .text{
+        font-size: 2.0rem;
+        color:rgb(15, 129, 15) ;
+          font-family:'Kaushan Script', cursive;
+        }
+      
+      .text1{
+        font-size: 1rem;
+        color:black;
+          font-family:'Kaushan Script', cursive;
+      }
+      
+      footer{
+        height: 100px;
+        text-align: center;
+        margin-top: -100px;
+        font-size: 20px;
+      }
+      
+      .text2{
+        color :black
+      }

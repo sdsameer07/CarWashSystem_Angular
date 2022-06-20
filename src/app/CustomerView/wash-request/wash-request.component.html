@@ -1,0 +1,89 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<mat-card-content>
+    <mat-card-title>My Wash Requests</mat-card-title>
+    <div >         
+        <!-- <buton class="btn btn-success" (click)="addUser()"> Add Car</button> &nbsp;&nbsp; -->
+        <!-- <button class="btn btn-danger" (click)="logOutUser()"> LogOff</button> -->
+        <table class="table table-striped table-responsive table-hover">
+          <thead>
+          <tr>
+            <th >User Details</th>            
+            <th>Car Details</th>            
+            <th>Package Name</th>
+            <th>Address</th>
+            <th>Wash Request Time</th>  
+            <th >Wash Notes</th>          
+            <th>Action</th>
+          </tr>
+          </thead> 
+          <tbody>
+            <tr *ngFor="let washrequest of washrequests">
+              <td>
+             Name :  <b>{{washrequest.userFirstName}}&nbsp;
+              {{washrequest.userLastName}}</b><br>
+              Mobile  :  {{washrequest.userMobileNumber}}<br>
+              Email : {{washrequest.userEmail}}
+            </td>   
+
+              <td>
+              Company : {{washrequest.carCompany}}<br>
+              Model : {{washrequest.carModel }},
+              Color : {{washrequest.carColor }}<br>
+            Registration Number : <b>{{washrequest.carRegistrationNumber }}</b> 
+            </td>
+             <td> {{washrequest.packageName }} </td>
+              <td>{{washrequest.addressLine1 }},
+                  &nbsp;{{washrequest.addressLine2}}<br>
+                  {{washrequest.addressLandmark}},
+                  {{washrequest.addressCity }},
+                  {{washrequest.addressState }},
+                  {{washrequest.addressPincode }}</td>
+                 <td>{{washrequest.washNowRequestTime }}</td>
+                 <td>{{washrequest.washNowWashNotes}}</td>
+
+              
+      <td>
+          <button class="btn btn-success" (click)="Accepted(this.washrequest)">Accept</button> &nbsp;&nbsp; 
+     <button class="btn btn-danger"(click)="Rejected(washrequest)"> Reject</button> 
+      </td>
+              <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button> -->
+                <!-- <button class="btn btn-warning" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td> -->
+            </tr>
+            <tr *ngIf="!washrequests || washrequests.length==0">
+              <th colspan="18">
+                <p class="text-right text-danger">Sorry No requests Available</p>
+              </th>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+</mat-card-content>

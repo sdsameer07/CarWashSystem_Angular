@@ -1,0 +1,175 @@
+<!-- <app-header (taggledEvent)="drawer.toggle()"></app-header>
+
+
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list role="list">
+    
+            <mat-list-item role="listitem" routerLink="UserWasherProfile" >User & Washer Profiles
+               
+            </mat-list-item>
+        
+            <mat-list-item role="listitem">Car Details</mat-list-item>
+            <mat-list-item role="listitem">Service plan</mat-list-item>
+            <mat-list-item role="listitem">Add-On List</mat-list-item>
+            <mat-list-item role="listitem">Promo Codes</mat-list-item>
+            <mat-list-item role="listitem">Orders</mat-list-item>
+            <mat-list-item role="listitem">Report</mat-list-item>
+            <mat-list-item role="listitem">LeaderBoard</mat-list-item>
+            <mat-list-item role="listitem">Advance Report</mat-list-item>
+          </mat-list>
+
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+    <mat-card class="main-content">
+        <mat-card-content>
+          <router-outlet></router-outlet>
+         
+        </mat-card-content>
+    </mat-card>
+    </div>
+  
+  </mat-drawer-container> -->
+
+
+  <nav class="navbar navbar-expand-md">
+    <a class="navbar-brand" href="#">
+      <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+      Car Wash Service
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+        aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbarToggler3">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Home">Home</a>
+            </li>
+            
+          <li class="nav-item">
+            <a class="nav-link" href="contactus">ContactUs</a>
+      
+            </li>
+            <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+        <!-- Wrapper for carousel items -->
+            <div class="carousel-item active">
+                <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+                
+            </div>
+  <app-header (taggledEvent)="drawer.toggle()" > <h1>Admin Menu</h1>
+  </app-header>
+<div class="pointer">
+  <mat-drawer-container class="example-container" autosize > 
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-nav-list>
+        
+            <mat-list-item role="listitem"  [routerLink]="'/CustomerProfiles'" 
+            matTooltip="Click here to view User/Washer Details"
+            matTooltipPosition="right">
+            <mat-icon >supervisor_account</mat-icon> &nbsp;
+              <span>Customer Profiles</span> 
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem" [routerLink]="'/WasherProfiles'" 
+            matTooltip="Click here to view User/Washer Details"
+            matTooltipPosition="right">
+            <mat-icon >supervisor_account</mat-icon> &nbsp;
+              <span>Washer Profiles</span> 
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem" [routerLink]="'/AllWashRequests'" 
+            matTooltip="Click here to view User/Washer Details"
+            matTooltipPosition="right">
+            <mat-icon >supervisor_account</mat-icon> &nbsp;
+              <span>All Wash Requests</span> 
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Car Details"
+            matTooltipPosition="right">
+              <mat-icon >airport_shuttle</mat-icon> &nbsp;
+              <span>Car Details</span></mat-list-item>
+              <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Service Plan"
+            matTooltipPosition="right">
+            <mat-icon >electrical_services</mat-icon> &nbsp;
+            <span>Service Plan</span></mat-list-item>
+            <mat-divider></mat-divider>
+     
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Add-On List"
+            matTooltipPosition="right">
+            <mat-icon >list_alt</mat-icon> &nbsp;
+            <span>Add-On List</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Promo Code"
+            matTooltipPosition="right">
+              <mat-icon >discount</mat-icon> &nbsp;
+              <span>Promo Code</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Orders"
+            matTooltipPosition="right">
+            <mat-icon >shopping_bag</mat-icon> &nbsp;
+            <span>Orders</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Report"
+            matTooltipPosition="right">
+            <mat-icon >report</mat-icon> &nbsp;
+            <span>Report</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view LeaderBoard"
+            matTooltipPosition="right">
+            <mat-icon >leaderboard</mat-icon> &nbsp;
+            <span>LeaderBoard</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="listitem"
+            matTooltip="Click here to view Advance Report"
+            matTooltipPosition="right">
+            <mat-icon >note_alt</mat-icon> &nbsp;
+            <span>Advance Report</span></mat-list-item>
+            <mat-divider></mat-divider>
+
+          
+          </mat-nav-list>
+
+    </mat-drawer>
+
+
+   
+    <div class="example-sidenav-content">
+     
+      
+    <mat-card class="main-content" class="image"   style="background-image:url('assets/Images/homecar.jpg');">
+     
+        <mat-card-content >
+         
+          <router-outlet></router-outlet>
+         
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-raised-button color="accent">share</button> -->
+        </mat-card-actions>
+    </mat-card>
+    </div>
+  
+  </mat-drawer-container>
+  </div>
+  

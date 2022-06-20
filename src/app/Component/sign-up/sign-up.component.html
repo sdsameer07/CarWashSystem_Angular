@@ -1,0 +1,166 @@
+<!-- main app container -->
+
+<nav class="navbar navbar-expand-md">
+    <a class="navbar-brand" href="#">
+      <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+      Car Wash Service
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+        aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbarToggler3">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Home">Home</a>
+            </li>
+            
+          <li class="nav-item">
+            <a class="nav-link" href="contactus">ContactUs</a>
+      
+            </li>
+            <li class="nav-item"><a class="nav-link" href="AdminLogin">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+        <!-- Wrapper for carousel items -->
+            <div class="carousel-item active">
+                <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+                
+            </div>
+<div class="image" style="background-image:url('assets/Images/homecar.jpg');" >
+
+<div >
+  <br><br>
+  <div class="d-flex justify-content-center" >
+  <div class="card card-container col-md-4"  >
+    <h5 class="card-header text-center" style="font-size: 30px;       font-family:'Kaushan Script', cursive;
+    color: white;font-weight: bold; padding: 20px;  background-color: rgb(2, 12, 104);">Registration Form</h5>
+    <br>
+    <div> 
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()"  >
+               
+                    <div class="form-group"  >
+                        <label>First Name :</label>
+                        <input type="text" class="form-control" formControlName="userFirstName">
+                        <span class="text-danger"
+                            *ngIf="(addFormControl.userFirstName.touched || submitted) && addFormControl.userFirstName.errors?.required">
+                            First Name is required
+                        </span>
+                    </div>
+               
+                    <div class="form-group" >
+                        <label>Last Name :</label>
+                        <input type="text" class="form-control" formControlName="userLastName">
+                        <span class="text-danger"
+                            *ngIf="(addFormControl.userLastName.touched || submitted) && addFormControl.userLastName.errors?.required">
+                            last Name is required
+                        </span>
+                    </div>
+                <!-- </div> -->
+            <div class="form-group">
+                <label>Email :</label>
+                <input type="text" formControlName="userEmail" class="form-control" >
+                <span class="text-danger"
+                *ngIf="(addFormControl.userEmail.touched || submitted) && addFormControl.userEmail.errors?.required">
+                Email is required
+            </span>
+            <span class="text-danger"
+                *ngIf="addFormControl.userEmail.touched && addFormControl.use.errors?.email">
+                Enter a valid email address
+            </span>
+            </div>
+            <div class="form-group">
+                <label>Mobile Number :</label>
+                <input type="text" class="form-control" formControlName="userMobileNumber">
+                <span class="text-danger"
+                    *ngIf="(addFormControl.userMobileNumber.touched  || submitted)   && addFormControl.userMobileNumber.errors?.required " >
+                    Mobile Number is required
+                </span>
+                
+            </div>
+            
+            <!-- <div class="form-check">
+                <label>Choose Gender</label><br>
+                Male<input type="radio" class="form-check-input" class="form-control" formControlName="userGender" checked>
+              
+                <span class="text-danger"
+                    *ngIf="(addFormControl.userGender.touched || submitted) && addFormControl.userGender.errors?.required">
+                    Gender is required
+                </span>
+                <label class="form-check-label" for="exampleRadios1">
+                    Female
+                  </label>
+                  <input type="radio" class="form-check-input" class="form-control" formControlName="userGender">
+
+                <span class="text-danger"
+                    *ngIf="(addFormControl.userGender.touched || submitted) && addFormControl.userGender.errors?.required">
+                    Gender is required
+                </span>
+            </div> -->
+            <label style="margin-left: 30px;">Choose Gender</label><br>
+            <div class="form-check">
+              <input class="form-check-input" formControlName="userGender" type="radio" name="exampleRadios" id="exampleRadios1" value="Male" >
+              <label class="form-check-label" for="exampleRadios1">
+                Male
+              </label>
+           &nbsp;
+           &nbsp;
+           &nbsp;
+           &nbsp;
+           &nbsp;
+         
+              <input class="form-check-input" formControlName="userGender" type="radio" name="exampleRadios" id="exampleRadios2" value="Female" >
+              <label class="form-check-label" for="exampleRadios2">
+                Female
+              </label>
+            </div>
+            <div class="form-group" hidden="true">
+                <label>Role</label>
+                <input type="text" class="form-control" formControlName="userRole" [(ngModel)]="Role">
+                <span class="text-danger"
+                    *ngIf="(addFormControl.userRole.touched || submitted) && addFormControl.userRole.errors?.required">
+                    Role is required
+                </span>
+            </div>
+                <!-- <div class="form-group col"> -->
+                    <div class="form-group">
+                        <label>Password :</label>
+                        <input type="password" class="form-control" formControlName="userPassword">
+                        <span class="text-danger"
+                            *ngIf="(addFormControl.userPassword.touched || submitted) && addFormControl.userPassword.errors?.required">
+                            Password is required
+                        </span>
+                        <!-- <span class="text-danger"
+                            *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+                            Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                            letter and 1 number
+                        </span> -->
+                    </div>
+                   
+                    <br>
+                    
+           
+            
+            <div class="text-center" style="margin-bottom: 20px; ">
+                <button style="padding: 10px; width: 170px;" class="btn btn-success" data-target="#exampleModal">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  style="padding: 10px; width: 170px;"class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+            </div>
+        </form>
+    </div>
+  </div>
+   
+  <!-- credits -->
+  <!-- <div class="text-center">
+    <p>
+        <a href="https://jasonwatmore.com/post/2019/06/14/angular-8-reactive-forms-validation-example" target="_top">Angular 8 - Reactive Forms Validation Example</a>
+    </p>
+    <p>
+        <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+    </p>
+  </div> -->
+  <br>
+  </div>
+  <br><br>
+  </div>

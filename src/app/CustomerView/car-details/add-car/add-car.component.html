@@ -1,0 +1,92 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<div class="image" style="background-image:url('assets/Images/homecar.jpg');" >
+
+<div style="padding-top: 30px; padding-right: 420px;">
+  <section class="parent" >
+      <section class="child">
+  <div class="context"  >
+      <mat-card class="box" >
+          <mat-card-header style="padding:8px;justify-content:center;display: flex;background-color:#3f51b5;  color:white;" >
+              <mat-card-title >Car Details Form</mat-card-title>
+             </mat-card-header><br>
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()" class="example-form" style=" text-align:center;" >
+      <mat-card-content>
+        <mat-form-field appearance="fill" hidden="true">
+          <mat-label>Enter your email</mat-label>
+        <input matInput formControlName="email" [(ngModel)]="Email" >
+        </mat-form-field><br> 
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Car Company </mat-label>
+          <input matInput formControlName="CarCompany" [errorStateMatcher]="matcher" required>
+          <mat-error>
+              Field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Car Model </mat-label>
+          <input matInput formControlName="CarModel" [errorStateMatcher]="matcher" required>
+          <mat-error>
+              Field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Car Registration Number </mat-label>
+          <input matInput formControlName="CarRegistrationNumber" [errorStateMatcher]="matcher" required>
+          <mat-error>
+              Field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Car Color </mat-label>
+          <input matInput formControlName="CarColor" [errorStateMatcher]="matcher" required>
+          <mat-error>
+              Field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;       
+       
+      </mat-card-content>
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="carForm.invalid">Add Car</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button color="warn" type="reset" >Reset</button>
+      </div>
+      </form>
+     
+      </mat-card>
+  </div>
+      
+  </section>
+  </section></div>
+  

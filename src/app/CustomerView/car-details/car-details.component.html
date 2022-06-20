@@ -1,0 +1,87 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<div class="image" style="background-image:url('assets/Images/homecar.jpg');" >
+
+  <mat-card-title>
+    <button mat-raised-button color="primary" [routerLink]="'/CustomerView'"  style="background-color:#02445e;"  matTooltip="Click here to Add Car "  matTooltipPosition="right" >
+      Go Back
+    </button></mat-card-title>
+  <mat-grid-list cols="2" rowHeight="2:1">
+
+  <mat-grid-tile>
+    
+    <mat-card-content style="margin-left: 50px; ">
+        <mat-card-title>
+          <button mat-raised-button color="primary" [routerLink]="'/AddCar'"   matTooltip="Click here to Add Car "  matTooltipPosition="right" >
+            Add Car
+          </button></mat-card-title>
+        <div class="col-lg-20">          
+            <!-- <buton class="btn btn-success" (click)="addUser()"> Add Car</button> &nbsp;&nbsp; -->
+            <!-- <button class="btn btn-danger" (click)="logOutUser()"> LogOff</button> -->
+            <table class="table table-striped table-responsive table-hover" style="background-color: white;">
+              <thead>
+              <tr>
+                <th class="text-hide">email</th>
+                <th>Car Company</th>
+                <th>Car Model</th>
+                <th>Car RegistrationNumber</th>
+                <th>Car Color</th>
+                <th>Action</th>
+                
+    
+    
+              </tr>
+              </thead> 
+              <tbody>
+                <tr *ngFor="let car of cars">
+                  <td class="text-hide">{{car.email}}</td>
+                  <td>{{car.carCompany | uppercase}}</td>
+                  <td>{{car.carModel | uppercase}}</td>
+                  <td>{{car.carRegistrationNumber| uppercase}}</td>
+                  <td>{{car.carColor | uppercase }}</td>
+          <td>
+              <button class="btn btn-success" (click)="onSelect(car)">GIVE IT TO WASH</button>
+         <!-- <button class="btn btn-danger"> Remove</button>  -->
+          </td>
+                  <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button> -->
+                    <!-- <button class="btn btn-warning" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td> -->
+                </tr>
+                <tr *ngIf="!cars || cars.length==0">
+                  <th colspan="5">
+                    <p class="text-right text-danger">Sorry No Cars Available</p>
+                  </th>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+    </mat-card-content>
+    </mat-grid-tile>
+    </mat-grid-list>

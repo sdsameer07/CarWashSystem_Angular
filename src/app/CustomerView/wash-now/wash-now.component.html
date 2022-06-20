@@ -1,0 +1,203 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<div class="image" style="background-image:url('assets/Images/CarWash.jpg');" >
+  <mat-card-title>
+    <!-- <button mat-raised-button color="primary" [routerLink]="'/cardetails'"  style="background-color:#02445e;"  matTooltip="Click here to Add Car "  matTooltipPosition="right" >
+      Go Back
+    </button></mat-card-title> -->
+
+<div class="context" style="padding-left: 650px;padding-top:40px">
+    <mat-card class="box" style="width: 400px;height: 440px; padding-top: 50px;">
+        <mat-card-header style="padding-top:8px;justify-content:center;display: flex;background-color:#02445e; border-radius:0.5em; color:white;" >
+            <mat-card-title >Wash Request</mat-card-title>
+           </mat-card-header>
+  <form  [formGroup]="addwashForm" (ngSubmit)="onSubmit()" style=" text-align:center; width: 380px;" >
+    <mat-card-content>
+    <mat-form-field appearance="fill" hidden="true" >
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" [(ngModel)]="Email" [errorStateMatcher]="matcher" required>
+        <mat-error>
+            FirstName is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>&nbsp;&nbsp;&nbsp;
+   
+      <!-- Select car -->
+      <mat-form-field appearance="fill" hidden="true">
+        <mat-label>Selected Car For Wash...</mat-label>
+        <input matInput formControlName="washNowSelectedCar"   [(ngModel)]="carNum" [errorStateMatcher]="matcher" >
+      </mat-form-field>
+      <mat-form-field  appearance="fill" hidden="true">
+        <mat-label>Car Location</mat-label>
+        <input type="text"  matInput formControlName="washNowCarLocation" [(ngModel)]="location" >
+       
+        
+      </mat-form-field><br>
+      <mat-form-field id="role" name="userRole">
+        <mat-label>Choose a Wash Package...</mat-label>
+        <mat-select formControlName="packageName">
+          <mat-option>None</mat-option>
+          <ng-container *ngFor="let package of packages" >
+            <mat-option  value="{{package.value}}" >
+              {{package.value}}
+            </mat-option>
+          </ng-container>
+        </mat-select>
+        <mat-error >Please choose a Package</mat-error>
+      </mat-form-field>
+           <br>
+           
+           <button
+           style="margin-left: 200px;"
+             type="button"
+             class="btn btn-info"
+             (click)="openPopup()">package Info
+           </button>
+           <div
+             class="modal"
+            
+             role="dialog"
+             [ngStyle]="{'display':displayStyle}">
+
+             <div class="modal-dialog" role="document" style="height: 500px;margin: 125px;margin-left: 1100px;">
+               <div class="modal-content">
+                 
+                 <table class="table">
+                  <thead>
+                    <tr>
+                    <th>Package Name</th>
+                    <th>Description</th>
+                    <th>Price </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><b>Shine & Protect</b></td>
+                    <td><ul>
+                      <li>
+                     UnderCaring Wash
+                      </li>
+                      <li>
+                        Presoak Bath
+                      </li>
+                      <li>
+                        Triple Form Polish
+                      </li>
+                      <li>
+                       Rainex Complete Surface Protectant
+                      </li>
+                      <li>
+                        Extream Shine Wash
+                      </li>
+                      <li>
+                        Spot Free Final Rainse
+                      </li>
+                      <li>
+                        Power Dry
+                      </li>
+                    </ul></td>
+                    <td>1950/-</td>
+                  </tr>
+                  <tr>
+                    <td><b>Premium Wash</b></td>
+                    <td><ul>
+                      <li>
+                     UnderCaring Wash
+                      </li>
+                      <li>
+                        Presoak Bath
+                      </li>
+                      <li>
+                        Extream Shine Wash
+                      </li>
+                      <li>
+                        Spot Free Final Rainse
+                      </li>
+                      <li>
+                        Power Dry
+                      </li>
+                    </ul></td>
+                    <td>1350/-</td>
+                  </tr>
+                
+                  <tr>
+                   <td><b>Deluxe Wash</b></td>
+                    <td><ul>
+                      <li>
+                     UnderCaring Wash
+                      </li>
+                      <li>
+                        Presoak Bath
+                      </li>
+                      <li>
+                        Extream Shine Wash
+                      </li>
+                      
+                    </ul></td>
+                    <td>950/-</td>
+                  </tr>
+                  <tr>
+                    <td><b>Basic Wash</b></td>
+                    <td><ul>
+                      <li>
+                     UnderCaring Wash
+                      </li> </ul>
+                    </td>
+                      <td>550/-</td>
+                  </tr>
+                </tbody>
+                </table>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-danger" 
+                           (click)="closePopup()">
+                     Close
+                   </button>
+                 </div>
+               </div>
+             </div>
+           </div>  
+           <br><br>
+           <mat-form-field class="example-email" appearance="fill">
+            <mat-label>Wash Notes</mat-label>
+            <!-- <input type="textarea" matInput formControlName="washNowWashNotes"> -->
+            <textarea matInput formControlName="washNowWashNotes">Give Wash Notes</textarea>
+          </mat-form-field>&nbsp;&nbsp;
+   
+    <div >
+      <button mat-button  style="background-color:#02445e;color:white" type="submit" [disabled]="addwashForm.invalid">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+    </div>
+  </mat-card-content>
+    </form>
+    </mat-card>
+  </div>
+  
+ 
+ 

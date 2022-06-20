@@ -1,0 +1,78 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="logoff()">Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<div class="image" style="background-image:url('assets/Images/homecar.jpg');" >     
+
+
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar " style="margin-top: 150px;">
+    <div class="position-sticky"  >
+      <div class="list-group list-group-flush mx-3 mt-4" >        
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true"  matTooltip="Click here to Accept & Decline"  matTooltipPosition="right" >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i>
+          <mat-icon>contact_phone</mat-icon>&nbsp;
+          <span>My Profile</span>
+        </a>
+        <br>
+        
+
+        <a [routerLink]="'/WashRequest'"  class="list-group-item list-group-item-action py-2 ripple" aria-current="true"  matTooltip="Click here to Accept & Decline"  matTooltipPosition="right" >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i>
+          <mat-icon>contact_phone</mat-icon>&nbsp;
+          <span>Wash Request</span>
+        </a>
+        <br>
+
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" matTooltip="Click here to generate Invoice"  matTooltipPosition="right">
+          <i class="fas fa-chart-area fa-fw me-3"></i>
+          <mat-icon>receipt</mat-icon>&nbsp;
+          <span>Invoice Generation</span>
+        </a>
+        <br>
+
+
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"  matTooltip="Click here to Add Ratings & Reviews"  matTooltipPosition="right"><i
+            class="fas fa-chart-bar fa-fw me-3"></i>
+           <span> <mat-icon>star star star_half</mat-icon><br></span>
+            <span>Ratings & Reviews </span></a>
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+ 
+
+
+  <main style="margin-top: 80px;">
+    <a class="nav-link mx-2" (click) ="logoff()" style="padding-left: 580px; padding-top: 10px;" ><b>Log off</b><i class="fas fa-heart pe-2" ></i><mat-icon>exit_to_app</mat-icon>
+    </a>
+      <h1 style="margin-left: 10px;"><b>Welcome </b><b style="color:rgb(0, 90, 207)"><i>{{Name}}..!</i></b></h1>
+      
+  </main>

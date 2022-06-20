@@ -1,0 +1,81 @@
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/carlogo.png" height="85px" width="85px" alt="">
+    Car Wash Service
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
+      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbarToggler3">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="Home">Home</a>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="contactus">ContactUs</a>
+    
+          <li class="nav-item"><a class="nav-link" href="Sign-up">SignUp</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="AdminLogin">Admin</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+      <!-- Wrapper for carousel items -->
+          <div class="carousel-item active">
+              <img src="assets/Images/homecar.jpg"  style="height:700px" class="d-block w-100" alt="Slide 1">
+              
+          </div>
+<div class="image" style="background-image:url('assets/Images/homecar.jpg');" >
+
+  
+<mat-card-content style="padding-top: 60px;">
+  <mat-card class="c1" >
+
+<form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" style=" text-align:center; " >
+  <h5 class="card-header text-center" style="font-size: 25px; font-family:Arial, Helvetica, sans-serif;
+  color: white;font-weight: bold; padding: 15px;border-radius: 0.3em; margin-top: 30px; background-color: rgb(2, 12, 104);">Customer Login</h5>
+
+  <div class="example-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="user@gmail.com" formControlName="userEmail"  required>
+            <mat-error *ngIf="loginForm.controls['userEmail'].errors?.required">
+                Email is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="loginForm.controls['userEmail'].errors?.email">
+                Please enter a valid email address
+              </mat-error>
+          </mat-form-field><br>
+        <mat-form-field appearance="fill" >
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="userPassword" >
+          <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button> -->
+          <mat-error *ngIf="loginForm.controls['userPassword'].errors?.required">
+            Password is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="loginForm.controls['userPassword'].errors?.minLength">
+            Minimum 8 charecters required
+          </mat-error>  
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" hidden="true">
+            <mat-label>User Role</mat-label>
+            <input matInput formControlName="userRole" value="Customer" >
+          </mat-form-field><br>  
+    </div> 
+        <button mat-raised-button color="primary" style="padding: 5px; width:140px;margin-bottom: 20px;font-size: 20px;" type="submit" [disabled]="loginForm.invalid">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+</form>
+</mat-card>
+</mat-card-content>
+</div>
+
+
+
+
+
+ 
